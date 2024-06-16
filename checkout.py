@@ -13,18 +13,17 @@ allRoomNo = []
 
 def returnn():
     
-    global SubmitBtn,labelFrame,lb1,bookInfo1,quitBtn,root,Canvas1,status
+    global SubmitBtn,labelFrame,lb1,bookInfo1,quitBtn,root,status
     
     RoomNo = bookInfo1.get()
 
     extractRoomNo = "select RoomNo from "+issueTable
-    try:
-        cur.execute(extractRoomNo)
-        con.commit()
-        for i in cur:
-            allRoomNo.append(i[0])
+    cur.execute(extractRoomNo)
+    con.commit()
+    for i in cur:
+        allRoomNo.append(i[0])
         
-        if RoomNo in allRoomNo:
+    if RoomNo in allRoomNo:
             checkAvail = "select status from "+roomTable+" where RoomNo = '"+RoomNo+"'"
             cur.execute(checkAvail)
             con.commit()
@@ -39,7 +38,7 @@ def returnn():
         else:
             messagebox.showinfo("Error","Room Number not present")
     except:
-        messagebox.showinfo("Error","Can't fetch Room Number's")
+        messagebox.showinfo("Error","Can't fetch Room Number")
     
     
     issueSql = "delete from "+issueTable+" where RoomNo = '"+RoomNo+"'"
@@ -75,15 +74,7 @@ def checkout():
     root.geometry("600x500")
 
     
-    Canvas1 = Canvas(root)
-    
-    Canvas1.config(bg="#006B38")
-    Canvas1.pack(expand=True,fill=BOTH)
-        
-    headingFrame1 = Frame(root,bg="#FFBB00",bd=5)
-    headingFrame1.place(relx=0.25,rely=0.1,relwidth=0.5,relheight=0.13)
-        
-    headingLabel = Label(headingFrame1, text="Check Out", bg='black', fg='white', font=('Courier',15))
+    headingLabel = Label(root, text="Check Out", bg='black', fg='white', font=('Courier',15))
     headingLabel.place(relx=0,rely=0, relwidth=1, relheight=1)
     
     labelFrame = Frame(root,bg='black')
@@ -96,11 +87,10 @@ def checkout():
     bookInfo1 = Entry(labelFrame)
     bookInfo1.place(relx=0.3,rely=0.5, relwidth=0.62)
     
-    #Submit Button
-    SubmitBtn = Button(root,text="Return",bg='#d1ccc0', fg='black',command=returnn)
+    SubmitBtn = Button(root,text="Return",bg='Grey', fg='black',command=returnn)
     SubmitBtn.place(relx=0.28,rely=0.9, relwidth=0.18,relheight=0.08)
     
-    quitBtn = Button(root,text="Quit",bg='#f7f1e3', fg='black', command=root.destroy)
+    quitBtn = Button(root,text="Quit",bg='Grey', fg='black', command=root.destroy)
     quitBtn.place(relx=0.53,rely=0.9, relwidth=0.18,relheight=0.08)
     
     root.mainloop()
