@@ -1,9 +1,13 @@
 from tkinter import *
 import pymysql
+from add_customer_list import *
+from checkin import *
+from checkout import *
+from roomlist import *
+
 
 con=pymysql.connect(host='localhost',user='root',password='ROOT123')
 
-cur=con.cursor()
 cursor=con.cursor()
 
 cursor.execute("CREATE DATABASE IF NOT EXISTS Hotel_man")
@@ -23,7 +27,6 @@ headingLabel.pack()
 
 btn1 = Button(root, text="Add Customer Details", bg='Black',fg='white',command =add_customer_details)
 btn1.place(relx=0.28,rely=0.3,relwidth=0.45,relheight=0.1)
-
 
 #Check in
 btn2 = Button(root, text="Check In", bg='Black',fg='white',command=checkinn)
