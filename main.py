@@ -28,23 +28,18 @@ headingLabel.pack()
 btn1 = Button(root, text="Add Customer Details", bg='Black',fg='white',command =add_customer_details)
 btn1.place(relx=0.28,rely=0.3,relwidth=0.45,relheight=0.1)
 
-#Check in
 btn2 = Button(root, text="Check In", bg='Black',fg='white',command=checkinn)
 btn2.place(relx=0.28,rely=0.4,relwidth=0.45,relheight=0.1)
 
-#check out
 btn3 = Button(root,text="Check Out",bg='black', fg='white',command=checkout)
 btn3.place(relx=0.28,rely=0.5, relwidth=0.45,relheight=0.1)
 
-# View Customer List
 btn4 = Button(root,text="View Customer List",bg='black', fg='white',command = View)
 btn4.place(relx=0.28,rely=0.6, relwidth=0.45,relheight=0.1)
 
-#Add Room(Connect it to rooms table)
 btn5 = Button(root,text="Add Rooms",bg='black', fg='white',command = addrooms)
 btn5.place(relx=0.28,rely=0.7, relwidth=0.45,relheight=0.1)
 
-#Room List
 btn6 = Button(root,text="Room List",bg='black', fg='white',command = View_Room)
 btn6.place(relx=0.28,rely=0.8, relwidth=0.45,relheight=0.1)
 
