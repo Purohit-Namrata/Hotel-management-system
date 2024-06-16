@@ -7,15 +7,16 @@ def addcustomer():
     Fname = custInfo1.get()
     Lname = custInfo2.get()
     PHNO = custInfo3.get()
-    if ((len(PHNO)==10) AND (Fname==([a-z]+)) AND (Lname== ([a-z]+))  AND (PHNO==[1-9]+)):
+    if ((len(PHNO)==10) and (Fname==([a-z]+)) and (Lname== ([a-z]+))  and (PHNO==[1-9]+)):
         insertCust = "insert into "+custTable+" values('"+Fname+"','"+Lname+"','"+PHNO+"')"
         cur.execute(insertCust)
         con.commit()
-        messagebox.showinfo('Sucess',"Customer Added successfully")
+        messagebox.showinfo('Success',"Customer Added successfully")
+    
      root.destroy()
 
 def add_customer_details():
-    global custInfo1, custInfo2, custInfo3, custInfo4, Canvas1, con, cur, custTable,root
+    global custInfo1, custInfo2, custInfo3, custInfo4, con, cur, custTable
 
     root= Tk()
     root.title("Add Customer details")
@@ -51,10 +52,10 @@ def add_customer_details():
     custInfo3 = Entry(labelFrame)
     custInfo3.place(relx=0.3,rely=0.50, relwidth=0.62, relheight=0.08)
    
-    SubmitBtn = Button(root,text="Add Details",bg='#d1ccc0', fg='black',command=addcustomer)
+    SubmitBtn = Button(root,text="Add Details",bg='Grey', fg='black',command=addcustomer)
     SubmitBtn.place(relx=0.28,rely=0.9, relwidth=0.18,relheight=0.08)
     
-    quitBtn = Button(root,text="Quit",bg='#f7f1e3', fg='black', command=root.destroy)
+    quitBtn = Button(root,text="Quit",bg='Grey', fg='black', command=root.destroy)
     quitBtn.place(relx=0.53,rely=0.9, relwidth=0.18,relheight=0.08)
     
     root.mainloop()
