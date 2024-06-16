@@ -2,12 +2,11 @@ from tkinter import *
 from tkinter import messagebox
 import pymysql
 
-con = pymysql.connect(host="localhost",user="root",password="ROOT123",database="hotel_man")
+con = pymysql.connect(host="localhost",user="root",password="ROOT123",database="Hotel_man")
 cur = con.cursor()
 
 roomTable = "rooms" 
 issueTable = "issued_rooms" 
-
 
 allRoomNo = [] 
 
