@@ -4,14 +4,13 @@ import pymysql
 
 con = pymysql.connect(host="localhost",user="root",password="ROOT123",database="Hotel_man")
 cur = con.cursor()
+custTable="Customer" 
 
-custTable="Cust" 
 def View(): 
     root = Tk()
     root.title("Customer List")
     root.minsize(width=400,height=400)
     root.geometry("600x500")
-
 
     headingLabel = Label(root, text="View Customer List", bg='black', fg='white', font=('Courier',15))
     headingLabel.place(relx=0,rely=0, relwidth=1, relheight=1)
