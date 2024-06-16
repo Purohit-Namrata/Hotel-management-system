@@ -6,17 +6,12 @@ con=pymysql.connect(host='localhost',user='root',password='ROOT123')
 cur=con.cursor()
 cursor=con.cursor()
 
-cursor=con.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS Hotel_man")
-
-cursor=con.cursor()
 cursor.execute("USE Hotel_man")
 
 cursor.execute("CREATE TABLE Customer(FNAME VARCHAR(20) PRIMARY KEY NOT NULL, LNAME VARCHAR(20) NOT NULL, PHNO INT NOT NULL)")
 cursor.execute("CREATE TABLE Issued_rooms(RoomNo int AUTO_INCREMENT PRIMARY KEY NOT NULL, Issued_to VARCHAR(20)NOT NULL, Status VARCHAR(20) NOT NULL)")
 cursor.execute("CREATE TABLE rooms (RoomNo int AUTO_INCREMENT PRIMARY KEY NOT NULL, RoomType VARCHAR(30) NOT NULL, Status VARCHAR(30) NOT NULL)")
-cursor= con.cursor()
-
 
 root=Tk()
 root.title("Hotel Management System")
