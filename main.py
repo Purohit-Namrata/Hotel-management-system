@@ -23,7 +23,7 @@ root.title("Hotel Management System")
 root.minsize(width=400,height=400)
 root.geometry("600x500")
 
-headingLabel = Label(root, text="Add Customer Details", bg='black', fg='white', font=('Courier',15))
+headingLabel = Label(root, text="Hotel Management System", bg='black', fg='white', font=('Courier',15))
 headingLabel.pack()
 
 btn1 = Button(root, text="Add Customer Details", bg='Black',fg='white',command =add_customer_details)
