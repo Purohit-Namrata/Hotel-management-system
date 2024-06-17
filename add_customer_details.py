@@ -12,22 +12,22 @@ def addcustomer():
         cur.execute(insertCust)
         con.commit()
         messagebox.showinfo('Success',"Customer Added successfully")
-    
+    else:
+        messagebox.showinfo("Error","Data is not valid")
      root.destroy()
 
 def add_customer_details():
-    global custInfo1, custInfo2, custInfo3, custInfo4, con, cur, custTable
+    global custInfo1, custInfo2, custInfo3, con, cur, custTable
 
     root= Tk()
     root.title("Add Customer details")
     root.minsize(width=400,height=400)
     root.geometry("600x500")
 
-
     con = pymysql.connect(host="localhost",user="root",password="ROOT123",database="Hotel_man")
     cur = con.cursor()
     
-    custTable= "Cust" #customer table
+    custTable= "Customer"
     headingLabel = Label(root, text="Add Customer Details", bg='black', fg='white', font=('Courier',15))
     headingLabel.pack()
 
