@@ -4,7 +4,7 @@ from add_customer_list import *
 from checkin import *
 from checkout import *
 from roomlist import *
-
+from addrooms import *
 
 con=pymysql.connect(host='localhost',user='root',password='ROOT123')
 
