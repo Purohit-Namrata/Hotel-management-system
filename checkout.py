@@ -65,7 +65,7 @@ def returnn():
     
 def checkout(): 
     
-    global bookInfo1,SubmitBtn,quitBtn,Canvas1,con,cur,root,labelFrame, lb1
+    global bookInfo1,SubmitBtn,quitBtn,con,cur,root,labelFrame, lb1
     
     root = Tk()
     root.title("Check Out")
