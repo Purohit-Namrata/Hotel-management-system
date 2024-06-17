@@ -32,7 +32,7 @@ def View_Room():
     except:
         messagebox.showinfo("Failed to fetch files from database")
     
-    quitBtn = Button(root,text="Close",bg='#f7f1e3', fg='black', command=root.destroy)
+    quitBtn = Button(root,text="Close",bg='Dark Greyish Orange', fg='black', command=root.destroy)
     quitBtn.place(relx=0.4,rely=0.9, relwidth=0.18,relheight=0.08)
     
     root.mainloop()
